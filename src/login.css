@@ -55,7 +55,7 @@
   margin-left: 30px;
 }
 
-.login {
+.login-signup {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -67,7 +67,7 @@
   background-image: linear-gradient(#21c08b, #8f57fd);
 }
 
-.login__container {
+.login-signup__container {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -80,37 +80,37 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.login__container > h2 {
+.login-signup__container > h2 {
   text-align: center;
 }
 
-.login__container--form {
+.login-signup__container--form {
   display: flex;
   flex-direction: column;
 }
 
-.login__container--remember-me {
+.login-signup__container--remember-me {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
 }
 
-.login__container--form label {
+.login-signup__container--form label {
   font-size: 14px;
   cursor: pointer;
 }
 
-.login__container--remember-me > label > input {
+.login-signup__container--remember-me > label > input {
   margin-right: 6px;
   cursor: pointer;
 }
 
-.login__container--remember-me a {
+.login-signup__container--remember-me a {
   font-size: 14px;
   text-decoration: none;
 }
 
-.login__container--remember-me a:hover {
+.login-signup__container--remember-me a:hover {
   text-decoration: underline;
 }
 
@@ -129,17 +129,17 @@
   cursor: pointer;
 }
 
-.login__container--register {
+.login__container--signup {
   font-size: 14px;
 }
 
-.login__container--register a {
+.login__container--signup a {
   font-weight: bold;
   font-size: 16px;
   text-decoration: none;
 }
 
-.login__container--register a:hover {
+.login__container--signup a:hover {
   text-decoration: underline;
 }
 
@@ -169,12 +169,13 @@
     margin: 0 auto;
   }
 
-  .login {
+  .login-signup {
     min-height: 0;
   }
 
-  .login__container {
+  .login-signup__container {
     width: 100%;
+    min-height: 84vh;
     padding: 0px;
     border: none;
     box-shadow: none;
