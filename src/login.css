@@ -1,56 +1,87 @@
 * {
   margin: 0;
-  font-family: var(--main-font);
   padding: 0;
+  font-family: var(--main-font);
   color: var(--color-white);
+  box-sizing: border-box;
 }
 
 :root {
+  --main-font: "Muli", sans-serif;
   --color-white: #ffffff;
   --color-gradient-bg: #099;
-  --main-font: "Muli", sans-serif;
+}
+
+.input {
+  height: 50px;
+  padding: 0px 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  background-color: transparent;
+  border-bottom: 2px solid white;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  outline: none;
+}
+
+::placeholder {
+  color: var(--color-white);
+}
+
+.button {
+  height: 50px;
+  margin: 10px 0px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
 }
 
 .header {
-  align-items: center;
-  background-color: #21c08b;
-  color: white;
   display: flex;
-  height: 100px;
   justify-content: space-between;
-  top: 0px;
+  align-items: center;
+  height: 100px;
   width: 100%;
+  background-color: #21c08b;
 }
 
 .header__img {
-  margin-left: 30px;
   width: 200px;
+  margin-left: 30px;
 }
 
 .login {
-  background-image: linear-gradient(#21c08b, #8f57fd);
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   padding: 0px 30px;
   min-height: calc(
     100vh - 200px
   ); /* El ancho será igual al tamaño de todo el height menos 200px (100px del header + 100px del footer) */
+  background-image: linear-gradient(#21c08b, #8f57fd);
 }
 
 .login__container {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 2px solid white;
-  border-radius: 40px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  min-height: 700px;
-  padding: 60px 68px 40px;
-  width: 300px;
+  min-height: 600px;
+  width: 400px;
+  padding: 30px 40px;
+  border: 2px solid white;
+  border-radius: 40px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.login__container > h2 {
+  text-align: center;
 }
 
 .login__container--form {
@@ -58,19 +89,23 @@
   flex-direction: column;
 }
 
-.login__container--form label {
-  font-size: 14px;
-}
-
 .login__container--remember-me {
-  color: white;
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
 }
 
+.login__container--form label {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.login__container--remember-me > label > input {
+  margin-right: 6px;
+  cursor: pointer;
+}
+
 .login__container--remember-me a {
-  color: white;
   font-size: 14px;
   text-decoration: none;
 }
@@ -79,16 +114,19 @@
   text-decoration: underline;
 }
 
-.login__container--social-media > div {
-  align-items: center;
+.login__container--social-media {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
   font-size: 14px;
-  margin-bottom: 10px;
 }
 
 .login__container--social-media > div > img {
-  margin-right: 10px;
   width: 30px;
+  margin-right: 10px;
+  margin-top: 15px;
+  cursor: pointer;
 }
 
 .login__container--register {
@@ -96,7 +134,6 @@
 }
 
 .login__container--register a {
-  color: white;
   font-weight: bold;
   font-size: 16px;
   text-decoration: none;
@@ -107,69 +144,45 @@
 }
 
 .footer {
-  align-items: center;
-  background-color: #8f57fd;
   display: flex;
-  height: 100px;
+  align-items: flex-end;
   width: 100%;
+  height: 100px;
+  padding-bottom: 30px;
+  background-color: #8f57fd;
 }
 
 .footer a {
-  color: white;
-  cursor: pointer;
-  font-size: 14px;
   padding-left: 30px;
+  font-size: 14px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .footer a:hover {
   text-decoration: underline;
 }
 
-.input {
-  background-color: transparent;
-  border-bottom: 2px solid white;
-  border-left: 0px;
-  border-right: 0px;
-  border-top: 0px;
-  color: white;
-  font-family: "Muli", sans-serif;
-  font-size: 16px;
-  height: 50px;
-  margin-bottom: 20px;
-  outline: none;
-  padding: 0px 20px;
-}
-
-::placeholder {
-  color: white;
-}
-
-.button {
-  background-color: rgba(255, 255, 255, 0.3);
-  border: none;
-  border-radius: 25px;
-  color: white;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  font-family: "Muli", sans-serif;
-  height: 50px;
-  letter-spacing: 1px;
-  margin: 10px 0px;
-}
-
 @media only screen and (max-width: 600px) {
+  .header__img {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .login {
+    min-height: 0;
+  }
+
   .login__container {
-    background-color: transparent;
+    width: 100%;
+    padding: 0px;
     border: none;
     box-shadow: none;
-    padding: 0px;
-    width: 100%;
+    background-color: transparent;
   }
 
   .footer {
-    align-items: flex-start;
     flex-direction: column;
+    align-items: flex-start;
   }
 }
